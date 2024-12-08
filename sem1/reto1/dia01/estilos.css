@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/*para ajustar el texto a la ventana vista>ajuste de palabra*/
+
+/*
+Usos por defecto en caso no haya la principal, usara serif y sans-serif
+
+font-family: "Fraunces", serif;
+font-family: "Montserrat", sans-serif;
+
+*/
+body {
+    background-color: hsl(30, 38%, 92%);
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    margin: 0; /*margen de izq*/
+
+    display: flex; /*centra el "main" hor y vert*/
+    justify-content: center; /*centra*/
+    align-items: center; /*centra*/
+    height: 100vh; /*vh: view por height, es para todo el alto de la vista, y por defecto la vista del dispositivo q se usa*/
+}
+
+main {
+    /*background-color: skyblue;*/
+    border: 1px solid red; /*para saber limites del main*/
+    width: 650px;
+    display: flex; /*centra las 2 secciones: izq,der*/
+    min-height: 400px; /*altura */
+    border-radius: 18px;
+    overflow: hidden; /*si sobresale la imagen del borde, lo oculta por dentro*/
+}
+
+.photo {
+    background-color: orange;
+    width: 350px;
+    background-image: url(./images/image-product-desktop.jpg); /*importa img desde css*/
+    background-size: cover;
+    background-repeat: no-repeat; /*si es muy grande el espacio y la img es pequeña, tipo mosaico*/
+
+}
+.content {
+    background-color: hsl(0, 0%, 100%);
+    width: 300px;
+    padding: 28px; /*el doble de la letra normal 14px*/
+    
+    display: flex ; /*bloque en horizontal*/
+    flex-direction: column; /*bloque en vertical*/
+    gap: 14px; /*ya que tenemos el flex, podemos ponerle*/
+}
+
+.content h3 { /*para solo los h3, dentro de content: CLASE-ETIQUETA*/
+    /*
+    color: red;
+    background-color: orange;
+    border: 1px solid blue;
+    */
+    margin: 0; /*para margen q le da variable los navegadores, y se ve en "inspeccionar", ahora como se quito, subira un poco el h3. En otras palabras, "resetea" el margen de h3, para que tenga los mismos estilos en todos los navegadores*/
+    
+    text-transform: uppercase;
+    font-weight: 500; /*como niveles de "negrita"*/
+    color: hsl(228, 12%, 48%);
+    font-size: 14px;
+    letter-spacing: 7px; /*la mitad de la letra 14*/
+}
+
+
+/*
+En lo snavegadores se le atribuye tamaño de letra ejm 1.17em
+significa que 1.17*tamaño de letra(ejm 14) = 16.38, es este valor el real q se pone en el navegador
+*/
+
+.content h1 {
+    color: hsl(212, 21%, 14%);
+    margin: 0;
+    font-family: "Fraunces", serif;
+    font-size: 42px; /*triple de 14px*/
+    font-weight: 700; /*tipo negrita*/
+}
+
+.content div {
+    display: flex; /*ordena los 2 precios*/
+    align-items: center; /*alineacion vertical de ambos*/
+    gap: 14px; /*distancia entre bloques del flex*/
+}
+
+.content p {
+    margin: 0; /*se resetea lo q le da el navegador*/
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    line-height: 1.5;/*tipo sangria entre linea*/
+}
+
+.content span {
+    margin: 0;
+    color: red;
+    font-family: "Fraunces", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: hsl(158, 36%, 37%);
+}
+
+.content s {
+    color: hsl(228, 12%, 48%);
+}
+
+.content button {
+    
+    background-color: hsl(158, 36%, 37%);
+    font-family: inherit; /*hereda de su elemento padre: body*/
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    border: 0;
+
+    padding: 14px;
+    border-radius: 7px;
+    cursor: pointer; /*para darle click*/
+
+    display: flex; /*para el icono y texto*/
+    justify-content: center;
+
+    gap: 1px; /*para que ajuste dinamicamente el ancho al contenedor de button, en lugar de usar "width"*/
+  
+
+}
